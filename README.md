@@ -97,10 +97,10 @@ None of these values pass through React state. React only re-renders when a disc
 
 Encodes:
 
-- `film-desktop.mp4`: the 16:9 website film, 1920×1080 (clean Clideo export), for desktop, tablets sideways and phones sideways;
-- `film-mobile.mp4`: the 9:16 mobile film, 720×1280, for upright phones and tablets.
+- `film-desktop.mp4`: the 16:9 website film, 1920×1080, for desktop, tablets sideways and phones sideways;
+- `film-mobile.mp4`: the 9:16 mobile film, 1080×1920, for upright phones and tablets.
 
-Both are your exports at full resolution, re-encoded at high quality (CRF 18) with a keyframe every 8 frames so scrubbing stays smooth. Nothing is upscaled or cropped.
+Both are your clean Clideo exports at full resolution, re-encoded at high quality (CRF 17, about 34 MB each, visually identical to the source) with a keyframe every 8 frames so scrubbing stays smooth. A visitor downloads only the one that fits their screen.
 
 Optional extras (`webm`, `portraitWebm` in `FILM.sources`, switched on with `NEXT_PUBLIC_WEBM_FALLBACK=1` and the files `film-desktop.webm` / `film-mobile.webm`): VP9 versions for browsers without H.264. Every mainstream browser plays H.264, so they are left out to keep the site light.
 
@@ -112,7 +112,7 @@ To connect Wisherly later, fetch the birthday-view document, map it to `Birthday
 
 ## Assets to replace
 
-- **`public/video/*`**: the films. The website film is a clean 1080p export (a small sparkle mark in its corner was removed). The mobile film is still the earlier 720×1280 export; a native 1080×1920 vertical export can simply replace `film-mobile.mp4` if its timing matches.
+- **`public/video/*`**: the films. The website film is a clean 1080p export (a small sparkle mark in its corner was removed). The mobile film is a native 1080×1920 export.
 - **`public/photos/*`**: placeholder photographs.
 
 ## Deploy

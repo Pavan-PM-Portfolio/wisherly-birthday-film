@@ -15,7 +15,7 @@ interface Props {
   portraitPoster: string;
 }
 
-const SIZE = { landscape: { w: 1280, h: 720 }, portrait: { w: 720, h: 1280 } };
+const SIZE = { landscape: { w: 1920, h: 1080 }, portrait: { w: 1080, h: 1920 } };
 
 /** Tracks the upright-phone rule (same media query as the CSS) and follows rotation. */
 function usePortrait() {
